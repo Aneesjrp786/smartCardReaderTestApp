@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {SmartCardReader} from "../../../smartcardreader";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {}
+
+  async startConnection() {
+    await SmartCardReader.connect();
+  }
+
+  async disconnect() {
+    await SmartCardReader.disconnect();
+  }
 }
